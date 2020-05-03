@@ -15,4 +15,16 @@ public class BasketItem {
     public float getBasePrice() {
         return price*quantity;
     }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }
