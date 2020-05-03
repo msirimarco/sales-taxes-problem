@@ -1,4 +1,4 @@
-package salestaxesproblem;
+package salestaxesproblem.domain;
 
 public class BasketItem {
 

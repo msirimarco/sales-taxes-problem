@@ -1,4 +1,6 @@
-package salestaxesproblem;
+package salestaxesproblem.taxes;
+
+import salestaxesproblem.domain.Product;
 
 public class ImportDutyTax implements Tax {
 

@@ -1,13 +1,17 @@
-package salestaxesproblem;
+package salestaxesproblem.taxes;
 
 import org.junit.Before;
 import org.junit.Test;
+import salestaxesproblem.domain.Product;
+import salestaxesproblem.domain.ProductType;
+import salestaxesproblem.taxes.ImportDutyTax;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertThat;
 
-public class BasicSalesTaxShould {
+public class ImportDutyTaxShould {
 
     private Product importedProduct;
     private Product notImportedProduct;

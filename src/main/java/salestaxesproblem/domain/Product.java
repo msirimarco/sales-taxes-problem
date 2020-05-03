@@ -1,4 +1,4 @@
-package salestaxesproblem;
+package salestaxesproblem.domain;
 
 public class Product {
 
@@ -15,5 +15,9 @@ public class Product {
     public boolean isImported()
     {
         return imported;
+    }
+
+    public ProductType getType() {
+        return type;
     }
 }

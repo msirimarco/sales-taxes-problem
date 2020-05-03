@@ -1,8 +1,8 @@
-package salestaxesproblem;
+package salestaxesproblem.domain;
 
 public enum ProductType {
     BOOK,
     FOOD,
-    MEDICAL_PRODUCT,
+    MEDICAL,
     OTHER
 }

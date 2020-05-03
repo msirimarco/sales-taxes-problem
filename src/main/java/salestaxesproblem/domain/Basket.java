@@ -1,4 +1,6 @@
-package salestaxesproblem;
+package salestaxesproblem.domain;
+
+import salestaxesproblem.taxes.TaxingService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +19,6 @@ public class Basket {
     }
 
     public float getSalesTaxes() {
-        float totalSalesTaxes = 0;
-        for(BasketItem item : items)
-        {
-            totalSalesTaxes += taxingService.taxFor(item);
-        }
-        return totalSalesTaxes;
+        return 0f;
     }
 }

@@ -1,9 +1,11 @@
-package salestaxesproblem;
+package salestaxesproblem.domain;
 
-import org.hamcrest.Matcher;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import salestaxesproblem.domain.BasketItem;
+import salestaxesproblem.domain.Product;
+import salestaxesproblem.domain.ProductType;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
