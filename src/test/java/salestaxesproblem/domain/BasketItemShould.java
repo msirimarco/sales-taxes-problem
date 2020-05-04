@@ -20,14 +20,14 @@ public class BasketItemShould {
 
     @Test
     public void computeAmountOfProduct() {
-        BasketItem item = new BasketItem(product, 12.49f, 1);
-        assertThat(item.getBasePrice(), is(12.49f));
+        BasketItem item = new BasketItem(product, 12.49f, 1, 0f);
+        assertThat(item.getTotalPrice(), is(12.49f));
     }
 
     @Test
     public void computeAmountOfMoreThanOneProduct() {
-        BasketItem item = new BasketItem(product, 12.49f, 3);
-        assertThat(item.getBasePrice(), is(12.49f*3));
+        BasketItem item = new BasketItem(product, 12.49f, 3, 0);
+        assertThat(item.getTotalPrice(), is(12.49f*3));
     }
 
 }

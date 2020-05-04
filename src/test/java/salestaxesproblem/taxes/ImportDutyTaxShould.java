@@ -32,7 +32,7 @@ public class ImportDutyTaxShould {
     @Test
     public void returnTaxAmount() {
         ImportDutyTax importDutyTax = new ImportDutyTax(0.05f);
-        assertThat(importDutyTax.taxFor(importedProduct, 15f), is(0.75f));
+        assertThat(importDutyTax.taxFor(importedProduct, 15.69f), is(0.80f));
         assertThat(importDutyTax.taxFor(notImportedProduct, 15f), is(0f));
     }
 }

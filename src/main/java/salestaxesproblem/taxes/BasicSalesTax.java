@@ -2,6 +2,7 @@ package salestaxesproblem.taxes;
 
 import salestaxesproblem.domain.Product;
 import salestaxesproblem.domain.ProductType;
+import salestaxesproblem.utils.MathUtil;
 
 import java.util.EnumSet;
 
@@ -23,7 +24,7 @@ public class BasicSalesTax implements Tax {
     @Override
     public float taxFor(Product product, float price) {
         if (isApplicable(product)) {
-            return rate * price;
+            return MathUtil.roundUpToFraction(price * rate, 20);
         }
         return 0;
     }

@@ -1,6 +1,7 @@
 package salestaxesproblem.taxes;
 
 import salestaxesproblem.domain.Product;
+import salestaxesproblem.utils.MathUtil;
 
 public class ImportDutyTax implements Tax {
 
@@ -19,7 +20,7 @@ public class ImportDutyTax implements Tax {
     public float taxFor(Product product, float price) {
         if (isApplicable(product))
         {
-            return price * rate;
+            return MathUtil.roundUpToFraction(price * rate, 20);
         }
         return 0;
     }

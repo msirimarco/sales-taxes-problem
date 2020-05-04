@@ -5,15 +5,13 @@ public class BasketItem {
     private Product product;
     private float price;
     private int quantity;
+    private float taxes;
 
-    public BasketItem(Product product, float price, int quantity) {
+    public BasketItem(Product product, float price, int quantity, float taxes) {
         this.product = product;
         this.price = price;
         this.quantity = quantity;
-    }
-
-    public float getBasePrice() {
-        return price*quantity;
+        this.taxes = taxes;
     }
 
     public Product getProduct() {
@@ -22,6 +20,18 @@ public class BasketItem {
 
     public float getPrice() {
         return price;
+    }
+
+    public float getTotalPrice() {
+        return price * quantity;
+    }
+
+    public float getTaxes() {
+        return taxes;
+    }
+
+    public float getTotalTaxes() {
+        return taxes * quantity;
     }
 
     public int getQuantity() {

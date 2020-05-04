@@ -39,7 +39,7 @@ public class BasicSalesTaxShould {
     @Test
     public void returnTaxAmount() {
         BasicSalesTax basicSalesTax = new BasicSalesTax(EnumSet.of(ProductType.OTHER), 0.1f);
-        assertThat(basicSalesTax.taxFor(beer, 3.5f), is(0.35f));
+        assertThat(basicSalesTax.taxFor(beer, 3.59f), is(0.40f));
         assertThat(basicSalesTax.taxFor(book, 15f), is(0f));
     }
 }

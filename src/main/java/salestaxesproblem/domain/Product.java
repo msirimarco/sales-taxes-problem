@@ -20,4 +20,8 @@ public class Product {
     public ProductType getType() {
         return type;
     }
+
+    public String getName() {
+        return name;
+    }
 }
