@@ -41,7 +41,6 @@ public class Basket {
     public void printReceipt() {
         for (BasketItem item : items) {
             float priceAndTaxes = item.getTotalPrice() + item.getTotalTaxes();
-
             receiptPrinter.printLine(String.format("%d %s: %.2f", item.getQuantity(), item.getProduct().getName(), priceAndTaxes));
         }
         receiptPrinter.printLine( String.format("Sales Taxes: %.2f", salesTaxes));

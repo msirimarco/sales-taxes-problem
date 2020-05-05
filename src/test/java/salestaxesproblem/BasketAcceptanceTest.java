@@ -59,8 +59,8 @@ public class BasketAcceptanceTest {
 
     @Test
     public void printedReceiptContainsAllItems2() {
-        Product importedBoxOfChocolate = new Product("imported box of chocolates", ProductType.FOOD, true);
-        Product importedBottleOfPerfume = new Product("imported bottle of perfume", ProductType.OTHER, true);
+        Product importedBoxOfChocolate = new Product("box of chocolates", ProductType.FOOD, true);
+        Product importedBottleOfPerfume = new Product("bottle of perfume", ProductType.OTHER, true);
         basket.addProduct(importedBoxOfChocolate, 10f, 1);
         basket.addProduct(importedBottleOfPerfume, 47.50f, 1);
         basket.printReceipt();
@@ -75,7 +75,7 @@ public class BasketAcceptanceTest {
 
     @Test
     public void printedReceiptContainsAllItems3() {
-        Product importedBottleOfPerfume = new Product("imported bottle of perfume", ProductType.OTHER, true);
+        Product importedBottleOfPerfume = new Product("bottle of perfume", ProductType.OTHER, true);
         basket.addProduct(importedBottleOfPerfume, 27.99f, 1);
 
         Product bottleOfPerfume = new Product("bottle of perfume", ProductType.OTHER, false);
@@ -84,8 +84,8 @@ public class BasketAcceptanceTest {
         Product packetOfHeadachePills = new Product("packet of headache pills", ProductType.MEDICAL, false);
         basket.addProduct(packetOfHeadachePills, 9.75f, 1);
 
-        Product boxOfImportedChocolates = new Product("box of imported chocolates", ProductType.FOOD, true);
-        basket.addProduct(boxOfImportedChocolates, 18.99f, 3);
+        Product boxOfImportedChocolates = new Product("box of chocolates", ProductType.FOOD, true);
+        basket.addProduct(boxOfImportedChocolates, 11.25f, 3);
 
         basket.printReceipt();
         ArgumentCaptor<String> stringCaptor = ArgumentCaptor.forClass(String.class);

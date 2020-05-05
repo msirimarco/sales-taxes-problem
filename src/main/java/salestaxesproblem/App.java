@@ -12,6 +12,8 @@ import salestaxesproblem.taxes.ImportDutyTax;
 import salestaxesproblem.taxes.SimpleTaxingService;
 import salestaxesproblem.taxes.TaxingService;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.EnumSet;
 
 public class App {
@@ -20,8 +22,23 @@ public class App {
     }
 
     public static void main(String[] args) {
+        if (args.length <= 0) {
+            System.out.println("No arguments are passed! Pass basket input file to start.");
+        } else {
+            SimpleTaxingService taxingService = new SimpleTaxingService();
+            taxingService.addTax(new ImportDutyTax(.05f));
+            taxingService.addTax(new BasicSalesTax(EnumSet.of(ProductType.OTHER), .1f));
+            ReceiptPrinter receiptPrinter = new ReceiptPrinter();
+            BasketInputParser parser = new BasketInputParser();
+            for (String input : args) {
+                Basket basket = parser.createBasketFromFile(input, taxingService, receiptPrinter);
+                basket.printReceipt();
+                System.out.println();
+            }
+        }
 
-        TaxingService taxingService = new SimpleTaxingService();
+
+       /* TaxingService taxingService = new SimpleTaxingService();
         taxingService.addTax(new ImportDutyTax(.05f));
         taxingService.addTax(new BasicSalesTax(EnumSet.of(ProductType.OTHER), .1f));
 
@@ -37,6 +54,6 @@ public class App {
 
         basket.printReceipt();
 
-        System.out.println(new App().getGreeting());
+        System.out.println(new App().getGreeting());*/
     }
 }

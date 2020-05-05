@@ -22,6 +22,6 @@ public class Product {
     }
 
     public String getName() {
-        return name;
+        return imported ? "imported " + name : name;
     }
 }
