@@ -4,28 +4,21 @@
 package salestaxesproblem;
 
 import salestaxesproblem.domain.Basket;
-import salestaxesproblem.domain.BasketItem;
-import salestaxesproblem.domain.Product;
 import salestaxesproblem.domain.ProductType;
 import salestaxesproblem.taxes.BasicSalesTax;
 import salestaxesproblem.taxes.ImportDutyTax;
 import salestaxesproblem.taxes.SimpleTaxingService;
 import salestaxesproblem.taxes.TaxingService;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.EnumSet;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
         if (args.length <= 0) {
             System.out.println("No arguments are passed! Pass basket input file to start.");
         } else {
-            SimpleTaxingService taxingService = new SimpleTaxingService();
+            TaxingService taxingService = new SimpleTaxingService();
             taxingService.addTax(new ImportDutyTax(.05f));
             taxingService.addTax(new BasicSalesTax(EnumSet.of(ProductType.OTHER), .1f));
             ReceiptPrinter receiptPrinter = new ReceiptPrinter();
@@ -36,24 +29,5 @@ public class App {
                 System.out.println();
             }
         }
-
-
-       /* TaxingService taxingService = new SimpleTaxingService();
-        taxingService.addTax(new ImportDutyTax(.05f));
-        taxingService.addTax(new BasicSalesTax(EnumSet.of(ProductType.OTHER), .1f));
-
-        Product book = new Product("Book", ProductType.BOOK, false);
-        Product musicCd = new Product("music CD", ProductType.OTHER, false);
-        Product chocolateBar = new Product("chocolate bar", ProductType.FOOD, false);
-
-
-        Basket basket = new Basket(taxingService, new ReceiptPrinter());
-        basket.addProduct(book, 12.49f, 2);
-        basket.addProduct(musicCd, 14.99f, 1);
-        basket.addProduct(chocolateBar, 0.85f, 1);
-
-        basket.printReceipt();
-
-        System.out.println(new App().getGreeting());*/
     }
 }
