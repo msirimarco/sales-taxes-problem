@@ -1,5 +1,7 @@
 # Sales taxes problem
 
+This repository contains my solution to "Sales taxes problem" exercise.
+
 ## Technologies used
 
 - *Java*
@@ -30,4 +32,4 @@ to run tests.
 ./gradle run --args="basket1.txt basket2.txt basket3.txt"
 ```
 
-to run with test input file.
+to run with input files. Every file contains a different list of purchased item. 
